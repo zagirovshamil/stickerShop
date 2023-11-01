@@ -1,13 +1,278 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #fff;
+  color: #222;
+  font-family: "Caveat", cursive;
+}
+
+.wrapper {
+  width: 1280px;
+  margin: 50px auto;
+}
+
+header {
+  position: relative;
+}
+
+header .logo {
+  font-weight: 600;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+header ul.nav {
+  float: right;
+  list-style: none;
+}
+
+header ul.nav li {
+  display: inline;
+  margin-left: 25px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: opacity 500ms ease;
+}
+
+header ul.nav li:hover {
+  opacity: 0.5;
+}
+
+.shop-cart-button {
+  float: right;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+  width: 25px;
+  height: 25px;
+}
+
+.shop-cart-button:hover,
+.shop-cart-button.active {
+  color: #da59cd;
+  transform: scale(1.5);
+}
+
+header .shop-cart {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  background: #f1f1f1;
+  z-index: 999;
+  -webkit-box-shadow: -19px 20px 28px 11px rgba(34, 60, 80, 0.25);
+  -moz-box-shadow: -19px 20px 28px 11px rgba(34, 60, 80, 0.25);
+  box-shadow: -19px 20px 28px 11px rgba(34, 60, 80, 0.25);
+  border-radius: 10px;
+  padding: 20px 20px 0 20px;
+}
+
+header .shop-cart .empty h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .item {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .item img {
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+header .shop-cart .item h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+header .shop-cart .item p {
+  color: #797979;
+  font-weight: 600;
+}
+
+header .shop-cart .item .delete-icon {
+  color: #797979;
+  float: right;
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+}
+
+header .shop-cart .item .delete-icon:hover {
+  color: #222;
+  transform: scale(1.5);
+}
+
+header .shop-cart .subtotal {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+header .presentation {
+  margin: 50px 0;
+  background: url("./components/img/background.jpg") no-repeat;
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center center;
+  /* Эти две позиции для нанесения различных стилей для бэка */
+  /* background-blend-mode: multiply;
+  background-color: #f5d312; */
+  position: relative;
+}
+
+header .presentation::after {
+  content: "Я помогу тебе подчеркнуть твою индивидуальность";
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 300px;
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.categories div {
+  display: inline-block;
+  background: #f2f2f2;
+  border-radius: 50px;
+  padding: 10px;
+  margin-bottom: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 500ms ease;
+}
+
+.categories div:hover {
+  border-color: silver;
+  transform: scale(1.1);
+}
+
+.full-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #222222ad;
+  z-index: 1000;
+  overflow: auto;
+}
+
+.full-item > div {
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .item {
+  width: 30%;
+  margin-bottom: 100px;
+  background: #f5f5f5;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+main .item img,
+.full-item img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  transition: transform 500ms ease;
+  cursor: pointer;
+}
+
+main .item img:hover {
+  transform: scale(1.05);
+}
+
+.full-item img:hover {
+  transform: scale(1.02);
+}
+
+main h2,
+.full-item h2,
+main p,
+.full-item p,
+main b,
+.full-item b {
+  margin: 10px 20px;
+  color: #333;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+main b,
+.full-item b {
+  color: #da59cd;
+}
+
+main b:hover {
+  color: #222;
+  transition: 500ms ease;
+}
+
+main .add-to-card,
+.full-item .add-to-card {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 32px;
+  color: #f5f5f5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 500ms ease;
+}
+
+.full-item .add-to-card {
+  position: relative;
+  right: 0px;
+  bottom: 0px;
+  margin: 10px 20px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 32px;
+  color: #f5f5f5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 500ms ease;
+}
+
+main .add-to-card:hover,
+.full-item .add-to-card:hover {
+  width: 40px;
+  height: 40px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
 }
