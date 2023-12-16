@@ -1,9 +1,5 @@
 import React from "react";
 
-export default function footer() {
-  return (
-    <div>
-      <footer className="logo">Все права защищены &copy;</footer>
-    </div>
-  );
-}
+export const Footer = () => {
+  return <div>Все права защищены...</div>;
+};

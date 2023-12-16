@@ -1,20 +1,10 @@
 import React from "react";
 import IconButton from "@mui/material/IconButton";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import MySlider from "../slick-slider/Slick";
-import { imgMap } from "../../utils/index";
+import { MySlider } from "../slick-slider/Slick";
 
-// Переименовать в ProductItem и вынести из папки Product-List
-export const Item = (props) => {
-  const { item, onShowItem, onAdd } = props;
-
-  const handleClick = () => {
-    onShowItem(item);
-  };
-
-  const handleAddToCart = () => {
-    onAdd(item);
-  };
+export const ProductItem = (props) => {
+  const { item, onClickItem } = props;
 
   return (
     <div className="item">
@@ -28,12 +18,12 @@ export const Item = (props) => {
       <h2> {item.title} </h2>
       <p>{item.desc}</p>
       <p>{item.price}&#8381;</p>
+      <button onClick={() => onClickItem(item.id)}>Открыть</button>
       <IconButton
         color="primary"
         aria-label="add to shopping cart"
         className="add-to-card"
         style={{ marginLeft: 15, color: "black" }}
-        onClick={handleAddToCart}
       >
         <AddShoppingCartIcon />
       </IconButton>

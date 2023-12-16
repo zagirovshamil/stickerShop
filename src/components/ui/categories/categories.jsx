@@ -1,6 +1,6 @@
 import React from "react";
 
-const Categories = (props) => {
+export const Categories = (props) => {
   const categories = [
     {
       key: "all",
@@ -30,5 +30,3 @@ const Categories = (props) => {
     </div>
   );
 };
-
-export default Categories;

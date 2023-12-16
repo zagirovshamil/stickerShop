@@ -1,21 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import Item from "./Item";
 
-export class Items extends Component {
-  render() {
-    return (
-      <main>
-        {this.props.items.map((el) => (
-          <Item
-            onShowItem={this.props.onShowItem}
-            key={el.id}
-            item={el}
-            onAdd={this.props.onAdd}
-          />
-        ))}
-      </main>
-    );
-  }
-}
-
-export default Items;
+// переименовать в Product-list и вынести отсюда Item
+export const Items = (props) => {
+  return (
+    <main>
+      {props.items.map((el) => (
+        <Item
+          onShowItem={props.onShowItem}
+          key={el.id}
+          item={el}
+          onAdd={props.onAdd}
+        />
+      ))}
+    </main>
+  );
+};
