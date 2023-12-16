@@ -1,1 +1,1 @@
-https://zagirovshamil.github.io/stickerShop/
+https://stickerShop.github.io/
