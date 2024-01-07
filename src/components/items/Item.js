@@ -6,11 +6,7 @@ import { imgMap } from "../../utils/index";
 
 // Переименовать в ProductItem и вынести из папки Product-List
 export const Item = (props) => {
-  const { item, onShowItem, onAdd } = props;
-
-  const handleClick = () => {
-    onShowItem(item);
-  };
+  const { item, onAdd } = props;
 
   const handleAddToCart = () => {
     onAdd(item);
@@ -18,7 +14,7 @@ export const Item = (props) => {
 
   return (
     <div className="item">
-      <MySlider>
+      <MySlider className="item-image">
         {item.sliderImages.map((image, index) => (
           <div key={index}>
             <img src={image} alt={index} />

@@ -14,6 +14,16 @@ import planImg from "../assets/img/Стикерпак Plan for autumn.jpg";
 import weImg from "../assets/img/Стикерпак We.jpg";
 import weImg1 from "../assets/img/Стикерпак We 1.jpg";
 
+import tg from "../assets/svg/iconTg.svg";
+import inst from "../assets/svg/iconInst.svg";
+import vk from "../assets/svg/iconVk.svg";
+
+export const footerSvg = {
+  tg: tg,
+  inst: inst,
+  vk: vk,
+};
+
 export const imgMap = {
   flowers: {
     flowersImg: flowersImg,

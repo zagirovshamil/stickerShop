@@ -1,5 +1,10 @@
 import React from "react";
+import { Source } from "../../constants/source";
 
 export const Footer = () => {
-  return <div>Все права защищены...</div>;
+  return (
+    <div>
+      <Source />
+    </div>
+  );
 };

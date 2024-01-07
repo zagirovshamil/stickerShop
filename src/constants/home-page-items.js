@@ -12,7 +12,7 @@ export const homePageItems = [
   },
   {
     id: 2,
-    title: undefined,
+    title: "Мини-пак Storm",
     img: imgMap.storm,
     desc: "Небольшой душевный пак со стикерами",
     category: "Мини-пак",

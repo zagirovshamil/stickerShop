@@ -4,7 +4,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { MySlider } from "../slick-slider/Slick";
 
 export const ProductItem = (props) => {
-  const { item, onClickItem } = props;
+  const { item, onClickItem, onAdd } = props;
 
   return (
     <div className="item">
@@ -24,6 +24,7 @@ export const ProductItem = (props) => {
         aria-label="add to shopping cart"
         className="add-to-card"
         style={{ marginLeft: 15, color: "black" }}
+        onClick={() => onAdd(item)}
       >
         <AddShoppingCartIcon />
       </IconButton>
